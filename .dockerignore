@@ -1,0 +1,12 @@
+node_modules
+vendor
+#public/build
+public/hot
+.git
+.gitignore
+README.md
+Changelog.md
+Dockerfile
+docker-compose.yml
+docker-compose.debug.yml
+docs

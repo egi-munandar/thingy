@@ -1,0 +1,183 @@
+@import "@coreui/coreui/scss/functions";
+
+// scss-docs-start gray-color-variables
+$white: #fff !default;
+$gray-base: #3c4b64 !default;
+$gray-100: #ebedef !default;
+$gray-200: #d8dbe0 !default;
+$gray-300: #c4c9d0 !default;
+$gray-400: #b1b7c1 !default;
+$gray-500: #9da5b1 !default;
+$gray-600: #8a93a2 !default;
+$gray-700: #768192 !default;
+$gray-800: #636f83 !default;
+$gray-900: #4f5d73 !default;
+$black: #000015 !default;
+// scss-docs-end gray-color-variables
+
+// fusv-disable
+$primary-dark: #1a117c !default;
+$primary-base: #2718ad !default;
+$primary-50: #988fed !default;
+$primary-25: #ccc7f6 !default;
+
+$secondary-dark: #212233 !default;
+$secondary-base: #9da5b1 !default;
+$secondary-50: #9da5b1 !default;
+$secondary-25: #ced2d8 !default;
+
+$success-dark: #15792f !default;
+$success-base: #289c4f !default;
+$success-50: #96dbad !default;
+$success-25: #cbedd6 !default;
+
+$info-dark: #1b70b6 !default;
+$info-base: #2081e2 !default;
+$info-50: #80c6ff !default;
+$info-25: #c0e6ff !default;
+
+$warning-dark: #e4890b !default;
+$warning-base: #e2a011 !default;
+$warning-50: #fcd88a !default;
+$warning-25: #feecc5 !default;
+
+$danger-dark: #c02929 !default;
+$danger-base: #c53f3f !default;
+$danger-50: #f2a9a9 !default;
+$danger-25: #f9d4d4 !default;
+
+$light-dark: $gray-100 !default;
+$light-base: $gray-100 !default;
+$light-50: shift-color($light-base, -70) !default;
+$light-25: shift-color($light-base, -80) !default;
+
+$dark-dark: $gray-900 !default;
+$dark-base: $gray-900 !default;
+$dark-50: shift-color($dark-base, -70) !default;
+$dark-25: shift-color($dark-base, -80) !default;
+// fusv-enable
+
+
+$secondary-dark: #212233 !default;
+
+$high-emphasis: rgba(shift-color($gray-base, +26), .95) !default;
+$medium-emphasis: rgba(shift-color($gray-base, +26), .681) !default;
+$disabled: rgba(shift-color($gray-base, +26), .38) !default;
+
+$high-emphasis-inverse: rgba($white, .87) !default;
+$medium-emphasis-inverse: rgba($white, .6) !default;
+$disabled-inverse: rgba($white, .38) !default;
+$border-color: $gray-100 !default;
+
+// scss-docs-start border-radius-variables
+$border-radius: .5rem !default;
+$border-radius-sm: .3rem !default;
+$border-radius-lg: .65rem !default;
+$border-radius-pill: 50rem !default;
+// scss-docs-end border-radius-variables
+
+// scss-docs-start sidebar-variables
+$sidebar-width: 16rem !default;
+$sidebar-widths: (
+    sm: 12rem,
+    lg: 20rem,
+    xl: 24rem) !default;
+$sidebar-padding-y: 0 !default;
+$sidebar-padding-x: 0 !default;
+$sidebar-color: $high-emphasis-inverse !default;
+$sidebar-bg: $secondary-dark !default;
+$sidebar-border-width: 0 !default;
+$sidebar-border-color: transparent !default;
+$sidebar-transition: margin-left .30s,
+    margin-right .30s,
+    box-shadow .075s,
+    transform .30s,
+    width .30s,
+    z-index 0s ease .30s !default;
+
+$sidebar-brand-height: 4rem !default;
+$sidebar-brand-color: $high-emphasis-inverse !default;
+$sidebar-brand-bg: rgba($black, .2) !default;
+
+$sidebar-header-height: 4rem !default;
+$sidebar-header-padding-y: .75rem !default;
+$sidebar-header-padding-x: 1rem !default;
+$sidebar-header-bg: rgba($black, .2) !default;
+$sidebar-header-height-transition: height .30s,
+    padding .30s !default;
+
+$sidebar-narrow-width: 4rem !default;
+
+$sidebar-backdrop-bg: $black !default;
+$sidebar-backdrop-opacity: .5 !default;
+$sidebar-backdrop-transition: opacity .30s linear !default;
+
+$sidebar-nav-title-padding-y: .75rem !default;
+$sidebar-nav-title-padding-x: 1rem !default;
+$sidebar-nav-title-margin-top: 1rem !default;
+$sidebar-nav-title-color: $medium-emphasis-inverse !default;
+$sidebar-nav-title-transition: height .30s,
+    margin .30s !default;
+
+$sidebar-nav-link-padding-y: .8445rem !default;
+$sidebar-nav-link-padding-x: 1rem !default;
+$sidebar-nav-link-color: $medium-emphasis-inverse !default;
+$sidebar-nav-link-bg: transparent !default;
+$sidebar-nav-link-transition: background .30s ease,
+    color .30s ease !default;
+$sidebar-nav-link-icon-color: $medium-emphasis-inverse !default;
+
+$sidebar-nav-link-hover-color: $high-emphasis-inverse !default;
+$sidebar-nav-link-hover-bg: rgba($white, .05) !default;
+$sidebar-nav-link-hover-icon-color: $high-emphasis-inverse !default;
+
+$sidebar-nav-link-active-color: $high-emphasis-inverse !default;
+$sidebar-nav-link-active-bg: rgba($white, .05) !default;
+$sidebar-nav-link-active-icon-color: $high-emphasis-inverse !default;
+
+$sidebar-nav-link-disabled-color: $disabled-inverse !default;
+$sidebar-nav-link-disabled-icon-color: $sidebar-nav-link-icon-color !default;
+
+$sidebar-nav-icon-width: 4rem !default;
+$sidebar-nav-icon-height: 1.25rem !default;
+$sidebar-nav-icon-font-size: $sidebar-nav-icon-height !default;
+
+$sidebar-nav-group-bg: rgba(0, 0, 0, .2) !default;
+$sidebar-nav-group-transition: background .30s ease-in-out !default;
+$sidebar-nav-group-items-transition: height .30s ease !default;
+$sidebar-nav-group-toggle-show-color: $sidebar-nav-link-color !default;
+
+$sidebar-nav-group-indicator-color: $medium-emphasis-inverse !default;
+$sidebar-nav-group-indicator-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$sidebar-nav-group-indicator-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$sidebar-nav-group-indicator-hover-color: $sidebar-nav-link-hover-color !default;
+$sidebar-nav-group-indicator-hover-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$sidebar-nav-group-indicator-hover-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$sidebar-nav-group-indicator-transition: transform .30s !default;
+
+$sidebar-footer-height: auto !default;
+$sidebar-footer-padding-y: .75rem !default;
+$sidebar-footer-padding-x: 1rem !default;
+$sidebar-footer-bg: rgba($black, .2) !default;
+$sidebar-footer-height-transition: height .30s,
+    padding .30s !default;
+
+$sidebar-toggler-height: 3rem !default;
+$sidebar-toggler-bg: rgba($black, .2) !default;
+$sidebar-toggler-transition: transform .30s !default;
+
+$sidebar-toggler-indicator-width: 4rem !default;
+$sidebar-toggler-indicator-height: 3rem !default;
+$sidebar-toggler-indicator-color: $gray-600 !default;
+$sidebar-toggler-indicator-icon: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-toggler-indicator-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E") !default;
+$sidebar-toggler-hover-bg: rgba(0, 0, 0, .3) !default;
+$sidebar-toggler-indicator-hover-color: $sidebar-nav-link-hover-color !default;
+$sidebar-toggler-indicator-hover-icon: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='#{$sidebar-toggler-indicator-hover-color}' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E") !default;
+// scss-docs-end sidebar-variables
+
+
+// scss-docs-start card-variables
+$card-border-color: rgba($gray-base, .125) !default;
+// scss-docs-end card-variables
+$btn-active-box-shadow: inset 0 3px 5px rgba($gray-base, .125) !default;
+$card-border-color: rgba($gray-base, .125) !default;
+$accordion-border-color: rgba($gray-base, .125) !default;
+$list-group-border-color: rgba($gray-base, .125) !default;
