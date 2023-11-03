@@ -1,3 +1,4 @@
 *
 !public/
 !.gitignore
+!common_currency.json
