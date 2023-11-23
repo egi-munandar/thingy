@@ -1,6 +1,9 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\ApiAuthController;
+use App\Http\Controllers\Master\CurrencyController;
+use App\Http\Controllers\Master\InstanceController;
+use App\Http\Controllers\Master\LocationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +23,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     $user->perms = $user->getPermissionNames();
     return $user;
 });
-Route::post('/login', [LoginController::class, 'api_login']);
+Route::post('/login', [ApiAuthController::class, 'api_login']);
+Route::post('/logout-app', [ApiAuthController::class, 'api_logout'])->middleware('auth:sanctum');
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::resource('location', LocationController::class);
+    Route::resource('instance', InstanceController::class);
+    Route::resource('currency', CurrencyController::class, ['except' => ['edit']]);
+});
+Route::get('/test', [InstanceController::class, 'index']);

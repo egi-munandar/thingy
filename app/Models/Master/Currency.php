@@ -4,10 +4,11 @@ namespace App\Models\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Eloquence\Behaviours\CamelCasing;
 
 class Currency extends Model
 {
-    use HasFactory;
+    use HasFactory, CamelCasing;
     protected $fillable = [
         'symbol',
         'name',

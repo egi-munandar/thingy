@@ -32,6 +32,7 @@ return new class extends Migration
             $table->dateTime('sold_time')->nullable();
             $table->text('sold_notes')->nullable();
             $table->text('bom')->nullable();
+            $table->unsignedBigInteger('location_id');
             $table->unsignedBigInteger('instance_id');
             $table->timestamps();
         });
