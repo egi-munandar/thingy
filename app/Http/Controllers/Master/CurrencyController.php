@@ -13,7 +13,7 @@ class CurrencyController extends Controller
      */
     public function index()
     {
-        $curs = Currency::all();
+        $curs = Currency::orderBy('name')->get();
         return $curs;
     }
 
@@ -40,8 +40,8 @@ class CurrencyController extends Controller
         $c->symbol = $r->symbol;
         $c->code = $r->code;
         $c->symbol_native = $r->symbol_native;
-        $c->decimal_digits = $r->decimal_digits;
-        $c->rounding = $r->rounding;
+        $c->decimal_digits = (int)$r->decimal_digits;
+        $c->rounding = (int)$r->rounding;
         $c->name_plural = $r->name_plural;
         $c->save();
         return response()->json($c, 200);
