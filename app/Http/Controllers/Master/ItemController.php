@@ -13,7 +13,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $i = Item::orderBy('name')->get();
+        return response()->json($i, 200);
     }
 
     /**

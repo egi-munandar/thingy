@@ -2,12 +2,13 @@
 
 namespace App\Models\Master;
 
+use Eloquence\Behaviours\CamelCasing;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    use HasFactory;
+    use HasFactory, CamelCasing;
     protected $fillable = [
         'asset_id',
         'archived',
