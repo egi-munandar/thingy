@@ -50,6 +50,17 @@ services:
                 - '-p${DB_PASSWORD}'
             retries: 3
             timeout: 5s
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '${PHPMYADMIN_PORT:-8800}:80'
+        links:
+            - mysql:db
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-@RootPass}
+            UPLOAD_LIMIT: 3000000000
+        networks:
+            - sail
     redis:
         image: 'redis:alpine'
         ports:
