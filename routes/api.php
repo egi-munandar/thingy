@@ -28,7 +28,6 @@ Route::post('/login', [ApiAuthController::class, 'api_login']);
 Route::post('/logout-app', [ApiAuthController::class, 'api_logout'])->middleware('auth:sanctum');
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('location', LocationController::class);
-    Route::resource('instance', InstanceController::class, ['except' => ['edit']]);
     Route::get('currency/paged', [CurrencyController::class, 'indexPaged']);
     Route::resource('currency', CurrencyController::class, ['except' => ['edit']]);
     Route::resource('item', ItemController::class, ['except' => ['edit']]);

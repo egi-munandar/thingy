@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('parent_id')->nullable();
-            $table->unsignedBigInteger('instance_id')->nullable();
             $table->string('path', 200)->nullable();
             $table->string('name', 200);
+            $table->string('description', 200)->nullable();
             $table->timestamps();
         });
     }

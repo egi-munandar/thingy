@@ -1,8 +1,8 @@
 # Thingy
 
-The Home Inventory - inspired by [HomeBox](https://github.com/hay-kot/homebox)
+The Simple Home Inventory
 
-### Built With Laravel Framework and React JS
+### Built With Laravel Framework
 
 Warning!!!! This project is not yet completed.
 

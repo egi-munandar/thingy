@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 200)->nullable();
             $table->string('asset_id', 100)->nullable();
             $table->boolean('archived')->nullable()->default(false);
-            $table->string('name', 200)->nullable();
-            $table->double('qty', 15, 2)->default(0);
             $table->text('description')->nullable();
             $table->double('purchase_price', 15, 2)->nullable()->default(0);
             $table->string('purchase_from', 200)->nullable();
@@ -32,9 +31,10 @@ return new class extends Migration
             $table->dateTime('sold_time')->nullable();
             $table->text('sold_notes')->nullable();
             $table->text('bom')->nullable();
-            $table->unsignedBigInteger('location_id');
-            $table->unsignedBigInteger('instance_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
