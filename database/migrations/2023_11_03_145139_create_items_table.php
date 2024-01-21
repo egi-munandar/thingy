@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 200)->nullable();
             $table->string('asset_id', 100)->nullable();
+            $table->text('image_url')->nullable();
             $table->boolean('archived')->nullable()->default(false);
             $table->text('description')->nullable();
             $table->double('purchase_price', 15, 2)->nullable()->default(0);

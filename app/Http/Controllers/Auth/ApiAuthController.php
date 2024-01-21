@@ -22,6 +22,7 @@ class ApiAuthController extends Controller
                 $token = $u->createToken($token_name);
                 $u->apiToken = $token->plainTextToken;
                 $u->perms = $u->permissions()->pluck('name')->toArray();
+                $u->currency;
                 return $u;
             }
         }
@@ -31,5 +32,22 @@ class ApiAuthController extends Controller
         info($r->headers);
         $r->user()->currentAccessToken()->delete();
         return response()->json('success', 200);
+    }
+    public function update_user(Request $r, User $user)
+    {
+        $r->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
+        info($r->all());
+        $user->update([
+            'name' => $r->name,
+            'email' => $r->email,
+            'currency_id' => $r->currency_id,
+        ]);
+        $user->apiToken = "";
+        $user->currency;
+        $user->perms = $user->permissions()->pluck('name')->toArray();
+        return $user;
     }
 }

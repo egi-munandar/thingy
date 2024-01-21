@@ -8,6 +8,7 @@
         "php": "^8.1",
         "backpack/crud": "^6.5",
         "backpack/theme-tabler": "^1.2",
+        "creativeorange/gravatar": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "kirkbushell/eloquence": "^10.0",
         "laravel/framework": "^10.10",

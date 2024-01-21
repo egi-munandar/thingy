@@ -10,11 +10,38 @@ class CurrencyController extends Controller
 {
     public function indexPaged(Request $r)
     {
+        $page = $r->page ?? 1;
+        $pageSize = $r->pageSize ?? 10;
+        $q = Currency::skip(($page - 1) * $pageSize)->take($pageSize);
+        if ($r->filter) {
+            $columns = [
+                'symbol',
+                'name',
+                'symbol_native',
+                'code',
+                'name_plural',
+            ];
+            $q->where(function ($w) use ($r, $columns) {
+                foreach ($columns as $c) {
+                    $w->orWhere($c, 'like', '%' . $r->filter . '%');
+                }
+            });
+        }
+        if ($r->sort) {
+            $srt = explode(",", $r->sort);
+            $q->orderBy(\Str::snake($srt[0]), $srt[1]);
+        }
+        $data = $q->get();
+        $totalPage = ceil(Currency::count() / $pageSize);
+        return response()->json(['totalPage' => $totalPage, 'data' => $data], 200);
+    }
+    public function indexPagedPluto(Request $r)
+    {
         $r->validate([
             'filter' => 'array'
         ]);
         $page = $r->page ?? 1;
-        $pageSize = 10;
+        $pageSize = $r->pageSize ?? 10;
         $q = Currency::skip(($page - 1) * $pageSize)->take($pageSize);
         if ($r->filter) {
             foreach ($r->filter as $key =>  $f) {

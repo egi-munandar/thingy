@@ -19,6 +19,7 @@ return new class extends Migration
             $table->dateTime('date');
             $table->string('note', 200)->nullable();
             $table->unsignedBigInteger('user_id');
+            $table->text('image_url')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
